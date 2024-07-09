@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 09:33:09 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 10:10:03 by niklasburch      ###   ########.fr       */
+/*   Created: 2024/07/09 10:11:38 by niklasburch       #+#    #+#             */
+/*   Updated: 2024/07/09 10:22:52 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+int main()
 {
-	_name = name;
-}
+	int N = 0;
+	Zombie* zom_arr = zombieHorde(N, "zom");
 
-Zombie::~Zombie()
-{
-	std::cout << "Destroying Zombie: " << _name << std::endl;
-}
-
-void Zombie::announce() const
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	if (!zom_arr)
+		return std::cerr << "Failed to create zombie Horde!" << std::endl, 1;
+	for (int i = 0; i < N; i++)
+		zom_arr[i].announce();
+	delete[] zom_arr;
+	return 0;
 }

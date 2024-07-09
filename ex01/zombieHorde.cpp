@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 09:33:09 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 10:10:03 by niklasburch      ###   ########.fr       */
+/*   Created: 2024/07/09 10:04:08 by niklasburch       #+#    #+#             */
+/*   Updated: 2024/07/09 10:20:32 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie* zombieHorde(int N, std::string name)
 {
-	_name = name;
-}
+	Zombie* zom_arr = nullptr;
+	try {
+		zom_arr = new Zombie[N];
+	}
+	catch (std::bad_alloc& e) {
+		std::cerr << "Memory allocation failed: " << e.what() << std::endl;
+		return nullptr;
+	}
 
-Zombie::~Zombie()
-{
-	std::cout << "Destroying Zombie: " << _name << std::endl;
-}
-
-void Zombie::announce() const
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	for (int i = 0; i < N; i++)
+		zom_arr[i].setName(name);
+	return zom_arr;
 }
