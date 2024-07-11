@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 11:32:54 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 12:05:59 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/11 14:44:02 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int main(int argc, char **argv)
 	std::string filename = argv[1];
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
-	std::ifstream r(filename);
+	std::ifstream r(filename.c_str());
 
 	if (!r.is_open())
 		return 1;
 	std::string new_filename = filename.append(".replace");
-	std::ofstream w(new_filename);
+	std::ofstream w(new_filename.c_str());
 	if (!w.is_open())
 		return r.close(), 1;
 	copy_file_replace(r, w, s1, s2);

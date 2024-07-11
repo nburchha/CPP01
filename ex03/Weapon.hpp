@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:37:27 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 10:48:09 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/11 13:22:01 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Weapon
 {
 	public:
 		Weapon(std::string type);
-		std::string getType();
+		const std::string& getType() const;
 		void setType(std::string type);
 	private:
 		std::string _type;

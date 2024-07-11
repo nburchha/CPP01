@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:33:09 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 10:11:32 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/11 13:07:08 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
